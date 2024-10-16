@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="/stylesheets/styles.css"/>
+  </head>
+    <div class="wrapper">
+        <h1><%= title %></h1>
+        <div class="ra-r">
+            <div class="tp">
+            <nav>
+                <a class="thumb-pr mn" href="/bookings/create">Create a booking</a>
+                <a class="thumb-pr r-e" href="/bookings/view">View all bookings</a>
+                <a class="thumb-pr mn" href="/bookings/update">Modify a booking</a> 
+                <a class="thumb-pr r-e" href="/bookings/find">Search for a Booking Report</a> 
+                <a class="thumb-pr mn" href="/workshops">Scheduled workshops</a> 
+                <a class="thumb-pr r-e" href="/about">~Our Story Here~</a> 
+                <a class="thumb-pr mn" href="/help">Need some help?</a> 
+            </nav>
+        </div>
+    </div>
+        <div class="ra-r"></div>
+        <body>
+            <h2>Your booking reference is <%= bookingReference %></h2> 
+            <h2>View your booking below</h2>
+            <table class="table table-inverse">
+                <thead>
+                    <tr>
+                        <th>Workshop</th>
+                        <th>Time</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Date</th>
+                        <th>Card Number</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% if (booking) { %>
+                        <tr>
+                            <td><%= workshop %></td>
+                            <td><%= booking.time %></td>
+                            <td><%= booking.name %></td>
+                            <td><%= booking.email %></td>
+                            <td><%= booking.date %></td>
+                            <td><%= booking.card %></td>
+                        </tr>
+                    <% } %>
+                </tbody>
+            </table>
+            <a href="/bookings/view" class="button">View All Bookings</a>
+        </body>
+    </div>
+</div>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="/stylesheets/styles.css"/>
+  </head>
+    <div class="wrapper">
+        <h1><%= title %></h1>
+        <div class="ra-r">
+          <div class="tp">
+          <nav>
+              <a class="thumb-pr mn" href="/bookings/create">Create a booking</a>
+              <a class="thumb-pr r-e" href="/bookings/view">View all bookings</a>
+              <a class="thumb-pr mn" href="/bookings/update">Modify a booking</a> 
+              <a class="thumb-pr r-e" href="/bookings/find">Search for a Booking Report</a> 
+              <a class="thumb-pr mn" href="/workshops">Scheduled workshops</a> 
+              <a class="thumb-pr r-e" href="/about">~Our Story Here~</a> 
+              <a class="thumb-pr mn" href="/help">Need some help?</a> 
+          </nav>
+      </div>
+  </div>
+        <div class="ra-r"></div>
+        <body>
+
+          <div class="ra-r"></div>
+          <div style="margin:0 auto ; width:50%; padding:20px">
+            <form action="/bookings/update_complete" method="post" onsubmit="return validateEmail()">
+                  <!-- include a hidden input field to store the _id -->
+                  <input type="hidden" name="_id" value="<%= booking._id %>">
+                  <script>
+                    console.log('Booking ID:', '<%= booking._id %>');
+                  </script>
+              <div>
+                <label for="workshop">Select a Workshop: </label>
+                <select id="workshop" name="workshop" required>
+                  <option value="" <%= booking.workshop === '' ? 'selected' : '' %>>Select...</option>
+                  <option value="Baking Workshop" <%= booking.workshop === 'Baking Workshop' ? 'selected' : '' %>>Baking Workshop</option>
+                  <option value="Electronic Repair Workshop" <%= booking.workshop === 'Electronic Repair Workshop' ? 'selected' : '' %>>Electronic Repair Workshop</option>
+                  <option value="Jewellery Making Workshop" <%= booking.workshop === 'Jewellery Making Workshop' ? 'selected' : '' %>>Jewellery Making Workshop</option>
+                </select>
+                <br /> <br /> <br /> <br />
+                <label for="time">Select a Time: </label>
+                <select id="time" name="time" required>
+                  <option value="" <%= !booking.time ? 'selected' : '' %>>Select...</option>
+                  <option value="9:00" <%= booking.time === '9:00' ? 'selected' : '' %>>9:00</option>
+                  <option value="14:00" <%= booking.time === '14:00' ? 'selected' : '' %>>14:00</option>
+                  <option value="16:00" <%= booking.time === '16:00' ? 'selected' : '' %>>16:00</option>
+                </select>                
+                <br /> <br /> <br /> <br />
+                <%#   label it will have when passed back to server, label must match in mongoose %> 
+                <label for="name" class="form-label">Name</label>
+                <input type="text" id="name" name="name" required pattern="[A-Za-z\s]+" value="<%= booking.name %>">
+                <div class="valid-feedback">
+                </div>
+              </div>
+              <br /> <br /> <br /> <br />
+              <%#   label it will have when passed back to server, label must match in mongoose %> 
+              <div>
+              <label for="email" class="form-label">Email</label>
+              <input type="text" id="email" name="email" value="<%= booking.email %>">
+              <div class="valid-feedback">
+              </div>
+            </div>
+            <script>
+              function validateEmail() {
+                const emailInput = document.getElementById("email");
+                const emailValue = emailInput.value;
+                const emailPattern = /^[A-Za-z0-9._+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+              
+                if (!emailPattern.test(emailValue)) {
+                  alert("Please enter a valid email address.");
+                  emailInput.focus();
+                  return false;
+                }
+                return true;
+              }
+              </script>
+              
+                <br /> <br /> <br /> <br />    
+              <div>       
+            <label>Date</label>
+            <input type="text" id="date" name="date" value="<%= booking.date %>">
+            <div class="valid-feedback">
+            </div>
+          </div>
+              <br /> <br /> <br /> <br />
+              <div>
+                <label for="card" class="form-label">Card Number</label>
+                <%#   card can have 13-19 digit length %> 
+                <input type="number" id="card" name="card" value="<%= booking.card %>">
+                <div class="valid-feedback">
+                </div>
+              </div>
+              <br /> <br /> <br /> <br />
+            <button>Submit</button>
+              </form>
+            </div>
+          </body>
+  </div>
+</div>
+
+</html>

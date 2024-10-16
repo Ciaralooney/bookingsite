@@ -1,0 +1,207 @@
+body	{
+	/* Setting the background image */
+	background-color: #e3dfdf;
+	/* Setting the padding */
+	padding: 30px;
+	}
+	
+/* paragraph */	
+p {
+	text-align: center;
+}
+table {
+    width: 100%;
+}
+
+/* table header and data cells */
+th, td {
+    text-align: left;
+    padding: 8px;
+}
+
+/* Applying a color to even rows (striped table effect) */
+tr:nth-child(even) {
+    background-color: rgb(231, 196, 202);
+}
+
+th {
+    background-color: #80a1b1;
+}
+
+nav {
+	text-align: center; /* Center buttons on website */
+  }
+
+/* Navigation button styling  */
+nav a {
+	color: black;
+	/* Setting the background colour */
+	background-color: #587464;
+	/* Removing underlines from links */
+	text-decoration: none;
+	margin: 0.625em 0 0.625em 0;
+	padding: 0.3125em; /* Spacing between buttons  */
+	/* Creating height and width  */
+	width: 8em;
+	/* Center the buttons */
+	display: inline-block;
+	/* Making font bold  */
+	font-weight: bold;
+	/* Setting the type of font, including some backup fonts */
+	font-family: 'Fredoka One', sans-serif, cursive;
+	/* Centering the text */
+	text-align: center;
+	}
+
+h1	{
+    /* Setting the background colour */
+    background-color: #a7c7c3;
+    /* Setting the font colour */
+    color: #5d7875;
+    /* Setting the type */
+    font-family: 'Bubblegum Sans', 'Fredoka One', sans-serif;
+    /* Centering the text */
+    text-align: center;
+    }
+
+h2	{
+	/* Setting the background colour */
+	background-color:  9FD8CB ;
+	/* Setting the font colour */
+	color: #5d7875;
+	/* Setting the type */
+	font-family: 'Fredoka One', sans-serif;
+	/* Centering the text */
+	text-align: center;
+	}
+
+
+/* style for unvisited link on navigation bar*/
+nav a:link {
+	/* removing the underlines on links */
+	text-decoration: none;
+		}
+
+/* colour and a border added when mouse is hovering over link on navigation bar */
+nav a:hover {
+	color: #7b56d1;
+	border: 2px inset;
+	/* change to lighter background colour */
+	background-color: #44824b;
+		}
+
+#cols-group {
+	width: 100%;
+	margin: auto;
+	/* Using Flexbox to ensure columns are equal height */
+	display: flex;
+	}
+
+#cols-group::after {
+	display: block;
+	clear: left;
+	content:"";
+}
+
+.inner-cols {
+	/* Using Flexbox to ensure columns are equal height */
+	flex: 1 0 auto;
+	width: 23%;
+	text-align: center;
+	border: dashed darkolivegreen 2px;
+	margin-bottom: 1em;
+}
+
+.image-cols {
+	/* Using Flexbox to ensure columns are equal height */
+	flex: 1 0 auto;
+	width: 25%;
+}
+
+/* Styling the text boxes in the form */
+input {
+	width: 100%;
+	padding: 12px 20px;
+	margin: 8px 0;
+	box-sizing: border-box;
+  }
+
+/* give visual clue when input is selected in form*/
+input:focus { 
+	background: #c1dfe4;
+	border: 3px solid #555;
+}
+
+/* .button is for class button, button is for submit button*/
+.button, button {
+	width: 50%;
+	cursor: pointer;
+	background-color: #346554;
+	border: none;
+	color: white;
+	padding: 16px 32px;
+	text-decoration: none;
+	/* Spacing the buttons and ensuring they are centered */
+	margin: 60px 4px;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+  }
+
+  .row {
+	display: flex;
+	flex-wrap: wrap;
+	padding: 0 -4px;
+  }
+  
+  .column {
+	flex: 25%;
+	padding: 0 4px;
+	box-sizing: border-box;
+  }
+  
+  .column img {
+	width: 100%;  
+	height: auto; /* maintain original aspect ratio */
+	margin-top: 8px;
+	vertical-align: middle;
+  }
+
+.square-image {
+    max-width: 100%;
+    height: auto; /* maintain original aspect ratio */
+}
+
+.rectangle-image {
+    max-width: 100%;
+    height: auto; 
+}
+
+.special-image {
+    max-width: 50%;
+    height: auto; /* maintain original aspect ratio */
+}
+
+a.update-link, a.delete-link {
+	display: inline-block;
+	padding: 8px 12px;
+	margin: 4px;
+	text-decoration: none;
+	border-radius: 4px;
+	color: black;
+  }
+  
+  a.update-link {
+	background-color: #9beb9e; 
+  }
+  
+  a.delete-link {
+	background-color: #f08078; 
+  }
+  
+  /* when mouse hovers over it fades */
+  a.update-link:hover, a.delete-link:hover {
+	opacity: 0.7;
+  }
+  

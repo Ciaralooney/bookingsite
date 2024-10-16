@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="/stylesheets/styles.css"/>
+  </head>
+    <div class="wrapper">
+        <h1><%= title %></h1>
+        <div class="ra-r">
+          <div class="tp">
+          <nav>
+              <a class="thumb-pr mn" href="/bookings/create">Create a booking</a>
+              <a class="thumb-pr r-e" href="/bookings/view">View all bookings</a>
+              <a class="thumb-pr mn" href="/bookings/update">Modify a booking</a> 
+              <a class="thumb-pr r-e" href="/bookings/find">Search for a Booking Report</a> 
+              <a class="thumb-pr mn" href="/workshops">Scheduled workshops</a> 
+              <a class="thumb-pr r-e" href="/about">~Our Story Here~</a> 
+              <a class="thumb-pr mn" href="/help">Need some help?</a> 
+          </nav>
+      </div>
+  </div>
+        <div class="ra-r"></div>
+        <body>
+            <div style="margin:0 auto ; width:50%; padding:20px">
+              <form action="/bookings/update" method="post">
+                <label for="userName" class="form-label">Name</label>
+                <input type="text" id="userName" name="userName" required pattern="[A-Za-z\s]+">
+                <div class="valid-feedback">
+                </div>
+                <br /> <br /> <br /> <br />
+                <label>Date</label>
+                <input type="text" id="bookingDate" name="bookingDate">
+                <div class="valid-feedback">
+                </div>
+              </div>
+                 <br />
+              <button>Submit</button>
+                </form>
+              </div>
+            </body>
+    </div>
+</div>
+ 
+
+</html>
